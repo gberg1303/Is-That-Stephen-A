@@ -37,7 +37,7 @@ def Predict_Photo():
     if proba[0,1] > .9:
         print("Yo, That's Stephen A. Smith")
     if proba[0,0] <.9 and proba[0,1] <.9:
-        print("I'm not sure about that one, but there's a", proba[0,0], "chance that is Darth Vader and a", proba[0,1], "chance that's Stephen A.")
+        print("I'm not sure about that one, but there's a", proba[0,0], "chance that is someone else and a", proba[0,1], "chance that's Stephen A.")
 
 
 ### Create Introduction to Running File

@@ -63,8 +63,8 @@ print(model.summary())
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 ### Train the Model
-model.fit(X_train, y_train, epochs=10, validation_data=(X_test, y_test), batch_size=64)
+model.fit(X_train, y_train, epochs=20, validation_data=(X_test, y_test), batch_size=64)
 
 ### Save Model
-model.save('/Users/jonathangoldberg/Google Drive/Random/Random Fun/Is That Spehen A/Model.h5')
+model.save(os.path.join(dirname, 'Model.h5'))
 

@@ -13,5 +13,5 @@ for files in os.walk(os.path.join(dirname, "Data/Training_Dataset")):
 df = pd.DataFrame(filenames, columns=['FileName'])
 
 ### Add Darth Vader and Stepehen A Columns DataFrame
-df['Darth_Vader'] = df['FileName'].str.contains('Darth_Vader')*1
+df['Other'] = 1 - df['FileName'].str.contains('Stephen_A')*1
 df['Stephen_A'] = df['FileName'].str.contains('Stephen_A')*1
