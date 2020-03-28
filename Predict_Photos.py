@@ -22,7 +22,7 @@ def Predict_Photo():
     ans = input('What photo would you like analyzed? Please insert the filepath:')
 
     ### Load the Model
-    model = load_model(dirname + 'Model.h5')
+    model = load_model(dirname + '/Model.h5')
 
     ### Predict a couple samples
     # Process the Images
@@ -33,7 +33,7 @@ def Predict_Photo():
     proba = model.predict(img.reshape(1,400,400,3))
 
     if proba[0,0] > .9:
-        print("That's Darth Vader, the Dark Lord of the Sith")
+        print("That's someone else")
     if proba[0,1] > .9:
         print("Yo, That's Stephen A. Smith")
     if proba[0,0] <.9 and proba[0,1] <.9:
