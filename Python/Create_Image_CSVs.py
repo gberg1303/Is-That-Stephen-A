@@ -4,7 +4,7 @@ import numpy as np
 from re import search
 
 ### Get Filenames and Create Dataframe
-for files in os.walk("/Users/jonathangoldberg/Google Drive/Random/Random Fun/Is That Spehen A/Data/Training_Dataset"):
+for files in os.walk("../Data/Training_Dataset"):
     for filename in files:
         filenames = filename
 
