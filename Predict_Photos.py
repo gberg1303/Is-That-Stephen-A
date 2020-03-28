@@ -1,4 +1,5 @@
 import keras
+import os
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
@@ -10,10 +11,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from tqdm import tqdm
-import time
 
-### Load the Training File 
+### Load the Training File and the filepath
 from Create_Image_CSVs import df as train
+dirname = os.path.dirname(__file__)
 
 def Predict_Photo():
 
@@ -21,7 +22,7 @@ def Predict_Photo():
     ans = input('What photo would you like analyzed? Please insert the filepath:')
 
     ### Load the Model
-    model = load_model('/Users/jonathangoldberg/Google Drive/Random/Random Fun/Is That Spehen A/Model.h5')
+    model = load_model(dirname + '/Model.h5')
 
     ### Predict a couple samples
     # Process the Images
@@ -42,6 +43,5 @@ def Predict_Photo():
 ### Create Introduction to Running File
 if __name__ == '__main__':
     print('Welcome to Yo, Is that Stephen A?')
-    time.sleep(1)
     Predict_Photo()
     

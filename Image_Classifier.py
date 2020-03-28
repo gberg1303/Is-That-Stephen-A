@@ -1,4 +1,5 @@
 import keras
+import os
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
@@ -13,11 +14,12 @@ from tqdm import tqdm
 
 ### Load the Dataframe of Files from the other Python Script
 from Create_Image_CSVs import df as train
+dirname = os.path.dirname(__file__)
 
 ### Start creating the train dataset
 train_image = []
 for i in tqdm(range(train.shape[0])):
-    img = image.load_img('/Users/jonathangoldberg/Google Drive/Random/Random Fun/Is That Spehen A/Data/Training_Dataset/'+train['FileName'][i],target_size=(400,400,3))
+    img = image.load_img(os.path.join(dirname, 'Data/Training_Dataset/')+train['FileName'][i],target_size=(400,400,3))
     img = image.img_to_array(img)
     img = img/255
     train_image.append(img)
