@@ -22,7 +22,7 @@ def Predict_Photo():
     ans = input('What photo would you like analyzed? Please insert the filepath:')
 
     ### Load the Model
-    model = load_model(dirname + '/Model.h5')
+    model = load_model(dirname + 'Model.h5')
 
     ### Predict a couple samples
     # Process the Images
